@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
@@ -12,7 +13,7 @@ const BOT_TOKEN = process.env.BOT_TOKEN;
 const CHAT_ID   = process.env.CHAT_ID;
 
 // Serve your HTML files from the parent folder (momo-website)
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, '..')));
 
 // In-memory store for confirm/reject decisions
 var decisions = {};
